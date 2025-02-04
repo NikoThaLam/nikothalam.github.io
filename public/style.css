@@ -1,0 +1,274 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+#themeToggle {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fdfefedc;
+    transition: .4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    left: 0.3em;
+    bottom: 0.35em;
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -10px 10px 0px inset,
+        rgba(0, 0, 0, 0.09) 0px -1px 15px -8px;
+    background-color: #ff99fd;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.container.dark-mode {
+    background-color: #1e1e1e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+#messages.dark-mode {
+    background: #2c2c2c;
+    border: 1px solid #444;
+}
+
+#messages li.dark-mode {
+    background: #333;
+    color: #fff;
+}
+
+.input__check:checked + .slider {
+    background-color: #17202A;
+}
+
+.input__check:checked + .slider:before {
+    transform : translateX(1.5em);
+}
+
+.form {
+    --width-of-input: 200px;
+    --border-height: 1px;
+    --border-before-color: rgba(221, 221, 221, 0.39);
+    --border-after-color: #5891ff;
+    --input-hovered-color: #4985e01f;
+    position: relative;
+    width: var(--width-of-input);
+}
+
+.input {
+    color: #fff;
+    font-size: 0.9rem;
+    background-color: transparent;
+    width: 100%;
+    box-sizing: border-box;
+    padding-inline: 0.5em;
+    padding-block: 0.7em;
+    border: none;
+    border-bottom: var(--border-height) solid var(--border-before-color);
+}
+
+.input-border {
+    position: absolute;
+    background: var(--border-after-color);
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s;
+}
+
+.input:hover {
+    background: var(--input-hovered-color);
+}
+
+.input:focus {
+    outline: none;
+}
+
+.input:focus ~ .input-border {
+    width: 100%;
+}
+
+button {
+    --sunGradient: linear-gradient(
+        60deg,
+        #3d3393 0%,
+        #2b76b9 37%,
+        #2cacd1 65%,
+        #35eb93 100%
+    );
+    --moonGradient: linear-gradient(to top, #cc208e 0%, #6713d2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: center;
+    width: 50px;
+    height: 30px;
+    color: rgb(64, 64, 64);
+    font-size: 0.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 10px;
+    background-color: transparent;
+    transition: 1s;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    box-shadow: 0px 0px 10px rgb(68, 68, 68);
+    transition: 0.2s;
+}
+
+button:hover span {
+    background: var(--sunGradient);
+}
+
+.state {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    border: 1px solid white;
+}
+
+#sun {
+    display: none;
+    background-color: #212121;
+    opacity: 0.85;
+}
+
+#moon {
+    background-color: #212121;
+    opacity: 0.85;
+}
+
+button:hover #sun {
+    display: flex;
+}
+
+button:hover #moon {
+    display: none;
+}
+
+button:hover .lightRotation {
+    animation: 1s linear reverse infinite rotation_413;
+}
+
+button:hover .lightRotation2 {
+    animation: 2s linear infinite rotation_413;
+}
+
+button:hover .lightRotation3 {
+    animation: 10s linear reverse infinite rotation_413;
+}
+
+button:hover .lightRotation4 {
+    animation: 3s linear infinite rotation_413;
+}
+
+.lightRotation {
+    position: absolute;
+    transition: 0.4s;
+    z-index: -1;
+    width: 60px;
+    height: 500px;
+    transform: rotate(50deg);
+    border-radius: inherit;
+    background: var(--moonGradient);
+}
+
+.lightRotation2 {
+    position: absolute;
+    transition: 0.4s;
+    z-index: -1;
+    width: 75px;
+    height: 500px;
+    transform: rotate(110deg);
+    border-radius: inherit;
+    background: var(--moonGradient);
+}
+
+.lightRotation3 {
+    position: absolute;
+    transition: 0.4s;
+    z-index: -1;
+    width: 40px;
+    height: 260px;
+    border-radius: inherit;
+    background: var(--moonGradient);
+}
+
+.lightRotation4 {
+    position: absolute;
+    transition: 0.4s;
+    z-index: -1;
+    width: 24px;
+    height: 220px;
+    transform: rotate(100deg);
+    border-radius: inherit;
+    background: var(--moonGradient);
+}
+
+@keyframes rotation_413 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nikothalams silly messaging app</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>nikothalams silly messaging app</h1>
+        <div id="themeToggle">
+            <label class="switch">
+                <input type="checkbox" class="input__check" id="toggleButton" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div id="usernameSection">
+            <div class="form">
+                <input class="input" id="username" placeholder="Enter your username" required type="text">
+                <span class="input-border"></span>
+            </div>
+            <button id="setUsernameBtn">Set Username</button>
+        </div>
+        <ul id="messages"></ul>
+        <div id="messageSection">
+            <div class="form">
+                <input class="input" id="message" placeholder="Type a message" required type="text">
+                <span class="input-border"></span>
+            </div>
+            <button id="sendBtn">Send</button>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
